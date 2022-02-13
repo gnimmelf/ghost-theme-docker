@@ -1,6 +1,7 @@
 # Choose the ghost version
-FROM ghost
-LABEL maintainer="rishabhmhjn"
+ARG  CODE_VERSION=3.42.5
+FROM ghost:${CODE_VERSION}
+LABEL maintainer="gnimmelf"
 
 # Set the working directory.
 WORKDIR /var/lib/ghost

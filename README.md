@@ -9,3 +9,15 @@ docker-compose -f "docker-compose.yml" up -d --build
 ```
 
 Now you can open your newly set up Ghost blog at <http://localhost:3102/>
+
+## Log in to container
+
+Get constainer id
+```
+sudo docker ps
+```
+
+Start interactive bash session
+```
+sudo docker exec -it <CONTAINER_ID> /bin/bash
+```

@@ -1,18 +1,19 @@
-version: '3.7'
+version: "3.7"
 
 services:
   ghost-theme-docker:
+    privileged: true
     image: ghost-theme-docker:1.0
     container_name: ghost-theme-docker
     restart: unless-stopped
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile-latest
     volumes:
-      - './.tmp/data:/var/lib/ghost/content/data'
-      - './.tmp/images:/var/lib/ghost/content/images'
-      - './.tmp/settings:/var/lib/ghost/content/settings'
-      - './Pico:/var/lib/ghost/content/themes/Pico'
+      - "./.tmp/data:/var/lib/ghost/content/data"
+      - "./.tmp/images:/var/lib/ghost/content/images"
+      - "./.tmp/settings:/var/lib/ghost/content/settings"
+      - "../ghost-themes:/var/lib/ghost/content/themes"
     ports:
       - "3102:2368"
     environment:
