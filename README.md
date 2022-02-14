@@ -17,7 +17,13 @@ Get container id
 sudo docker ps
 ```
 
-Start "interactive" bash session
+### Follow logs
+
+```
+sudo docker logs -f <CONTAINER_ID>
+```
+
+### Start "interactive" bash session
 ```
 sudo docker exec -it <CONTAINER_ID> /bin/bash
 ```
